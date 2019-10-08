@@ -1,12 +1,12 @@
 <?php
 
-namespace Hongyukeji\Package;
+namespace Hongyukeji\PluginPackage;
 
 /**
  * Automates loading of plugins
  *
  * @author   Hongyukeji <support@hongyuvip.com>
- * @package  Hongyukeji\Package
+ * @package  Hongyukeji\PluginPackage
  * @license  http://www.apache.org/licenses/LICENSE-2.0.html Apache License 2.0
  */
 class Loader
@@ -25,12 +25,12 @@ class Loader
      *
      * @var  string
      */
-    protected $type_class = 'Hongyukeji\Package\Package';
+    protected $type_class = 'Hongyukeji\PluginPackage\Package';
 
     /**
      * The instances of the Loader class
      *
-     * @var  \Hongyukeji\Package\Loader[]
+     * @var  \Hongyukeji\PluginPackage\Loader[]
      */
     protected static $instances = [];
 
@@ -67,7 +67,7 @@ class Loader
      *
      * @param   string  $instance  The name of the instance to use or create
      *
-     * @return  \Hongyukeji\Package\Loader
+     * @return  \Hongyukeji\PluginPackage\Loader
      */
     public static function forge($instance = 'default')
     {
@@ -94,7 +94,7 @@ class Loader
      * @param   string       $dir_name  If $dir is not set this sets both the name and the dir equal
      * @param   null|string  $dir       The dir where to look for packages
      *
-     * @return  \Hongyukeji\Package\Loader  The current object
+     * @return  \Hongyukeji\PluginPackage\Loader  The current object
      * @throws  \DomainException      If the directory is not found
      */
     public function addDir($dir = null)
@@ -170,7 +170,7 @@ class Loader
     /**
      * Gets all the packages or the packages from the directory
      *
-     * @return  \Hongyukeji\Package\Package[]  All the packages or the packages in the directory
+     * @return  \Hongyukeji\PluginPackage\Package[]  All the packages or the packages in the directory
      * @throws  \OutOfBoundsException   If there isn't such a $dir_name set
      */
     public function getAll()
@@ -185,7 +185,7 @@ class Loader
      *
      * @param   string  $slug               The slug of the package
      *
-     * @return  \Hongyukeji\Package\Package
+     * @return  \Hongyukeji\PluginPackage\Package
      * @throws  \OutOfBoundsException  if the package doesn't exist
      */
     public function get($slug)

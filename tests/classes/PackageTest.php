@@ -1,7 +1,7 @@
 <?php
 
-use Hongyukeji\Package\Package;
-use Hongyukeji\Package\Loader;
+use Hongyukeji\PluginPackage\Package;
+use Hongyukeji\PluginPackage\Loader;
 
 class PackageTest extends PHPUnit_Framework_TestCase
 {
@@ -16,7 +16,7 @@ class PackageTest extends PHPUnit_Framework_TestCase
 	public function testConstruct()
 	{
 		$package = new Package(__DIR__.'/../../tests/mock/hongyukeji/fake/');
-		$this->assertInstanceOf('Hongyukeji\Package\Package', $package);
+		$this->assertInstanceOf('Hongyukeji\PluginPackage\Package', $package);
 	}
 
 	/**

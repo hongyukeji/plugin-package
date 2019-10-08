@@ -1,15 +1,15 @@
 <?php
 
-namespace Hongyukeji\Package;
+namespace Hongyukeji\PluginPackage;
 
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
 /**
- * Collection of utilities used in Hongyukeji\Package
+ * Collection of utilities used in Hongyukeji\PluginPackage
  *
  * @author Hongyukeji <support@hongyuvip.com>
- * @package Hongyukeji\Package
+ * @package Hongyukeji\PluginPackage
  * @license http://www.apache.org/licenses/LICENSE-2.0.html Apache License 2.0
  */
 class Util
@@ -21,7 +21,7 @@ class Util
      * @param   string  $section   The dotted keys: akey.anotherkey.key
      * @param   mixed   $fallback  The fallback value
      * @return  mixed
-     * @throws  \DomainException  if the fallback is \Hongyukeji\Package\Void
+     * @throws  \DomainException  if the fallback is \Hongyukeji\PluginPackage\Void
      */
     public static function dottedConfig($config, $section, $fallback)
     {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Hongyukeji\Package;
+namespace Hongyukeji\PluginPackage;
 
 class AssetManager
 {
     /**
      * The package creating this object
      *
-     * @var  \Hongyukeji\Package\Package|null
+     * @var  \Hongyukeji\PluginPackage\Package|null
      */
     protected $package = null;
 
@@ -35,11 +35,11 @@ class AssetManager
     /**
      * Create a new instance of the asset manager
      *
-     * @param  \Hongyukeji\Package\Package  $package  The reference to the package creating this asset manager
+     * @param  \Hongyukeji\PluginPackage\Package  $package  The reference to the package creating this asset manager
      *
-     * @return  \Hongyukeji\Package\AssetManager
+     * @return  \Hongyukeji\PluginPackage\AssetManager
      */
-    public function __construct(\Hongyukeji\Package\Package $package)
+    public function __construct(\Hongyukeji\PluginPackage\Package $package)
     {
         $this->package = $package;
         $this->public_dir = $this->getPackage()->getLoader()->getPublicDir();
@@ -63,7 +63,7 @@ class AssetManager
     /**
      * Returns the Package object that created this instance of AssetManager
      *
-     * @return  \Hongyukeji\Package\Package|null  The Package object that created this instance of AssetManager
+     * @return  \Hongyukeji\PluginPackage\Package|null  The Package object that created this instance of AssetManager
      */
     public function getPackage()
     {
@@ -113,7 +113,7 @@ class AssetManager
     /**
      * Clears all the files in the public package directory
      *
-     * @return  \Hongyukeji\Package\AssetManager  The current object
+     * @return  \Hongyukeji\PluginPackage\AssetManager  The current object
      */
     public function clearAssets()
     {

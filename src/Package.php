@@ -1,12 +1,12 @@
 <?php
 
-namespace Hongyukeji\Package;
+namespace Hongyukeji\PluginPackage;
 
 /**
  * Holds data on a package package
  *
  * @author Hongyukeji <support@hongyuvip.com>
- * @package Hongyukeji\Package
+ * @package Hongyukeji\PluginPackage
  * @license http://www.apache.org/licenses/LICENSE-2.0.html Apache License 2.0
  */
 class Package
@@ -14,7 +14,7 @@ class Package
     /**
      * The Loader object that created this object
      *
-     * @var \Hongyukeji\Package\Loader
+     * @var \Hongyukeji\PluginPackage\Loader
      */
     protected $loader;
 
@@ -81,11 +81,11 @@ class Package
     /**
      * Sets a loader to use the relative
      *
-     * @param   \Hongyukeji\Package\Loader  $loader
+     * @param   \Hongyukeji\PluginPackage\Loader  $loader
      *
      * @return $this
      */
-    public function setLoader(\Hongyukeji\Package\Loader $loader)
+    public function setLoader(\Hongyukeji\PluginPackage\Loader $loader)
     {
         $this->loader = $loader;
 
@@ -95,7 +95,7 @@ class Package
     /**
      * Gets the loader that created this object
      *
-     * @return  \Hongyukeji\Package\Loader
+     * @return  \Hongyukeji\PluginPackage\Loader
      */
     public function getLoader()
     {
@@ -181,7 +181,7 @@ class Package
     /**
      * Converts the JSON to a PHP config to improve speed
      *
-     * @return  \Hongyukeji\Package\Package
+     * @return  \Hongyukeji\PluginPackage\Package
      *
      * @deprecated  23/03/2013  Trying to use JSON straight away
      */
@@ -224,7 +224,7 @@ class Package
     /**
      * Destroys the composer.php to recreate it from the composer.json
      *
-     * @return  \Hongyukeji\Package\Package
+     * @return  \Hongyukeji\PluginPackage\Package
      */
     public function refreshConfig()
     {
@@ -240,7 +240,7 @@ class Package
     /**
      * Clears the json_config variable to reload from JSON
      *
-     * @return  \Hongyukeji\Package\Package
+     * @return  \Hongyukeji\PluginPackage\Package
      *
      * @deprecated  23/03/2013  Trying to use JSON straight away
      */
@@ -254,7 +254,7 @@ class Package
     /**
      * Clears the config variable to reload from composer.php
      *
-     * @return  \Hongyukeji\Package\Package
+     * @return  \Hongyukeji\PluginPackage\Package
      */
     public function clearConfig()
     {
@@ -266,7 +266,7 @@ class Package
     /**
      * Runs the bootstrap file
      *
-     * @return  \Hongyukeji\Package\Package
+     * @return  \Hongyukeji\PluginPackage\Package
      */
     public function bootstrap()
     {
@@ -289,7 +289,7 @@ class Package
     /**
      * Returns an AssetManager object to deal with the assets
      *
-     * @return  \Hongyukeji\Package\AssetManager  A new instance of the AssetManager
+     * @return  \Hongyukeji\PluginPackage\AssetManager  A new instance of the AssetManager
      */
     public function getAssetManager()
     {
@@ -303,7 +303,7 @@ class Package
     /**
      * Checks for the existence of a theme to extend and returns the theme
      *
-     * @return  \Hongyukeji\Package\Package  The base theme we're extending with the current
+     * @return  \Hongyukeji\PluginPackage\Package  The base theme we're extending with the current
      * @throws  \OutOfBoundsException   If the theme is not found or no extended theme has been specified
      */
     public function getExtended()

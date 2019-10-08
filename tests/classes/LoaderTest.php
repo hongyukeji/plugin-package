@@ -1,6 +1,6 @@
 <?php
 
-use Hongyukeji\Package\Loader;
+use Hongyukeji\PluginPackage\Loader;
 
 class LoaderTest extends PHPUnit_Framework_TestCase
 {
@@ -14,7 +14,7 @@ class LoaderTest extends PHPUnit_Framework_TestCase
 		$new = Loader::forge('default');
 		$new2 = Loader::forge('default2');
 
-		$this->assertInstanceOf('\Hongyukeji\Package\Loader', $new);
+		$this->assertInstanceOf('\Hongyukeji\PluginPackage\Loader', $new);
 		$this->assertFalse($new === $new2);
 	}
 
@@ -87,7 +87,7 @@ class LoaderTest extends PHPUnit_Framework_TestCase
 		$new = Loader::forge('default');
 		$new->addDir('test', __DIR__.'/../../tests/mock/');
 		$package = $new->get('test', 'hongyukeji/fake');
-		$this->assertInstanceOf('Hongyukeji\Package\Package', $package);
+		$this->assertInstanceOf('Hongyukeji\PluginPackage\Package', $package);
 	}
 
 	/**

@@ -1,12 +1,12 @@
 <?php
 
-namespace Hongyukeji\Package;
+namespace Hongyukeji\PluginPackage;
 
 /**
  * Class to pass instead of primitive types
  *
  * @author Hongyukeji <support@hongyuvip.com>
- * @package Hongyukeji\Package
+ * @package Hongyukeji\PluginPackage
  * @license http://www.apache.org/licenses/LICENSE-2.0.html Apache License 2.0
  */
 class Void

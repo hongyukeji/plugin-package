@@ -4,6 +4,6 @@ class VoidTest extends PHPUnit_Framework_TestCase
 {
 	public function testForge()
 	{
-		$this->assertInstanceOf('Hongyukeji\Package\Void', \Hongyukeji\Package\Void::forge());
+		$this->assertInstanceOf('Hongyukeji\PluginPackage\Void', \Hongyukeji\PluginPackage\Void::forge());
 	}
 }
