@@ -1,15 +1,15 @@
 <?php
 
-namespace Foolz\Package;
+namespace Hongyukeji\Package;
 
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
 /**
- * Collection of utilities used in Foolz\Package
+ * Collection of utilities used in Hongyukeji\Package
  *
- * @author Foolz <support@foolz.us>
- * @package Foolz\Package
+ * @author Hongyukeji <support@hongyuvip.com>
+ * @package Hongyukeji\Package
  * @license http://www.apache.org/licenses/LICENSE-2.0.html Apache License 2.0
  */
 class Util
@@ -21,7 +21,7 @@ class Util
      * @param   string  $section   The dotted keys: akey.anotherkey.key
      * @param   mixed   $fallback  The fallback value
      * @return  mixed
-     * @throws  \DomainException  if the fallback is \Foolz\Package\Void
+     * @throws  \DomainException  if the fallback is \Hongyukeji\Package\Void
      */
     public static function dottedConfig($config, $section, $fallback)
     {

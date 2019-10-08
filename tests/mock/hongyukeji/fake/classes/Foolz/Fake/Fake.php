@@ -1,6 +1,6 @@
 <?php
 
-namespace Foolz\Fake;
+namespace Hongyukeji\Fake;
 
 class Fake
 {

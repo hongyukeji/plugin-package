@@ -1,12 +1,12 @@
 <?php
 
-namespace Foolz\Package;
+namespace Hongyukeji\Package;
 
 /**
  * Class to pass instead of primitive types
  *
- * @author Foolz <support@foolz.us>
- * @package Foolz\Package
+ * @author Hongyukeji <support@hongyuvip.com>
+ * @package Hongyukeji\Package
  * @license http://www.apache.org/licenses/LICENSE-2.0.html Apache License 2.0
  */
 class Void
@@ -15,7 +15,7 @@ class Void
     /**
      * Use to set default parameters to void
      *
-     * @return  \Foolz\Plugin\Void
+     * @return  \Hongyukeji\Plugin\Void
      */
     public static function forge()
     {

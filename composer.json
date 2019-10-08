@@ -1,21 +1,20 @@
 {
-    "name": "foolz/package",
+    "name": "hongyukeji/plugin-package",
     "type": "library",
     "description": "A package system for managing things like plugins, in Composer format.",
     "keywords": ["package", "composer"],
-    "homepage": "http://www.foolz.us",
+    "homepage": "http://www.hongyuvip.com",
     "license": "Apache-2.0",
-    "authors": [{"name": "foolz", "email": "support@foolz.us"}],
+    "authors": [{"name": "hongyukeji", "email": "support@hongyuvip.com"}],
     "support": {
-        "email": "support@foolz.us",
-        "irc": "irc://irc.irchighway.net/fooldriver"
+        "email": "support@hongyuvip.com",
     },
     "require": {
         "php": ">=5.4.0"
     },
     "autoload": {
         "psr-4": {
-            "Foolz\\Package\\": "src/"
+            "Hongyukeji\\Package\\": "src/"
         }
     }
 }

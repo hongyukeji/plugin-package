@@ -1,0 +1,24 @@
+{
+    "name": "hongyukeji/fake",
+    "type": "hongyukeji-plugin",
+    "description": "A fake plugin",
+    "keywords": ["fake", "mock"],
+    "homepage": "http://www.hongyuvip.com",
+    "license": "Apache-2.0",
+    "authors": [{"name": "hongyukeji", "email": "support@hongyuvip.com"}],
+    "support": {
+        "email": "support@hongyuvip.com",
+        "irc": "irc://irc.irchighway.net/fooldriver"
+    },
+    "require" : {
+        "hongyukeji/plugin": "dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Hongyukeji\\Fake" : "classes/"
+        }
+    },
+    "extra": {
+        "name": "Fake"
+    }
+}

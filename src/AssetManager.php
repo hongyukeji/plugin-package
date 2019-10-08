@@ -1,13 +1,13 @@
 <?php
 
-namespace Foolz\Package;
+namespace Hongyukeji\Package;
 
 class AssetManager
 {
     /**
      * The package creating this object
      *
-     * @var  \Foolz\Package\Package|null
+     * @var  \Hongyukeji\Package\Package|null
      */
     protected $package = null;
 
@@ -35,11 +35,11 @@ class AssetManager
     /**
      * Create a new instance of the asset manager
      *
-     * @param  \Foolz\Package\Package  $package  The reference to the package creating this asset manager
+     * @param  \Hongyukeji\Package\Package  $package  The reference to the package creating this asset manager
      *
-     * @return  \Foolz\Package\AssetManager
+     * @return  \Hongyukeji\Package\AssetManager
      */
-    public function __construct(\Foolz\Package\Package $package)
+    public function __construct(\Hongyukeji\Package\Package $package)
     {
         $this->package = $package;
         $this->public_dir = $this->getPackage()->getLoader()->getPublicDir();
@@ -63,7 +63,7 @@ class AssetManager
     /**
      * Returns the Package object that created this instance of AssetManager
      *
-     * @return  \Foolz\Package\Package|null  The Package object that created this instance of AssetManager
+     * @return  \Hongyukeji\Package\Package|null  The Package object that created this instance of AssetManager
      */
     public function getPackage()
     {
@@ -113,7 +113,7 @@ class AssetManager
     /**
      * Clears all the files in the public package directory
      *
-     * @return  \Foolz\Package\AssetManager  The current object
+     * @return  \Hongyukeji\Package\AssetManager  The current object
      */
     public function clearAssets()
     {

@@ -1,6 +1,6 @@
 <?php
 
-use Foolz\Package\Loader;
+use Hongyukeji\Package\Loader;
 
 class LoaderTest extends PHPUnit_Framework_TestCase
 {
@@ -14,7 +14,7 @@ class LoaderTest extends PHPUnit_Framework_TestCase
 		$new = Loader::forge('default');
 		$new2 = Loader::forge('default2');
 
-		$this->assertInstanceOf('\Foolz\Package\Loader', $new);
+		$this->assertInstanceOf('\Hongyukeji\Package\Loader', $new);
 		$this->assertFalse($new === $new2);
 	}
 
@@ -42,7 +42,7 @@ class LoaderTest extends PHPUnit_Framework_TestCase
 		$new->addDir($dir);
 		$array = $new->getAll();
 		$this->assertArrayHasKey($dir, $array);
-		$this->assertArrayHasKey('foolz/fake', $array[$dir]);
+		$this->assertArrayHasKey('hongyukeji/fake', $array[$dir]);
 	}
 
 	public function testAddDir()
@@ -51,7 +51,7 @@ class LoaderTest extends PHPUnit_Framework_TestCase
 		$new->addDir('test', __DIR__.'/../../tests/mock/');
 		$array = $new->getAll();
 		$this->assertArrayHasKey('test', $array);
-		$this->assertArrayHasKey('foolz/fake', $array['test']);
+		$this->assertArrayHasKey('hongyukeji/fake', $array['test']);
 	}
 
 	public function testRemoveDir()
@@ -79,15 +79,15 @@ class LoaderTest extends PHPUnit_Framework_TestCase
 		$new = Loader::forge('default');
 		$new->addDir('test', __DIR__.'/../../tests/mock/');
 		$array = $new->getAll('test');
-		$this->assertArrayHasKey('foolz/fake', $array);
+		$this->assertArrayHasKey('hongyukeji/fake', $array);
 	}
 
 	public function testGetPackage()
 	{
 		$new = Loader::forge('default');
 		$new->addDir('test', __DIR__.'/../../tests/mock/');
-		$package = $new->get('test', 'foolz/fake');
-		$this->assertInstanceOf('Foolz\Package\Package', $package);
+		$package = $new->get('test', 'hongyukeji/fake');
+		$this->assertInstanceOf('Hongyukeji\Package\Package', $package);
 	}
 
 	/**
@@ -97,6 +97,6 @@ class LoaderTest extends PHPUnit_Framework_TestCase
 	{
 		$new = Loader::forge('default');
 		$new->addDir('test', __DIR__.'/../../tests/mock/');
-		$package = $new->get('test', 'foolz/faker');
+		$package = $new->get('test', 'hongyukeji/faker');
 	}
 }
