@@ -7,7 +7,7 @@
     "license": "Apache-2.0",
     "authors": [{"name": "hongyukeji", "email": "support@hongyuvip.com"}],
     "support": {
-        "email": "support@hongyuvip.com",
+        "email": "support@hongyuvip.com"
     },
     "require": {
         "php": ">=5.4.0"
