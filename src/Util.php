@@ -21,7 +21,7 @@ class Util
      * @param   string  $section   The dotted keys: akey.anotherkey.key
      * @param   mixed   $fallback  The fallback value
      * @return  mixed
-     * @throws  \DomainException  if the fallback is \Hongyukeji\PluginPackage\Void
+     * @throws  \DomainException  if the fallback is \Hongyukeji\PluginPackage\Invalid
      */
     public static function dottedConfig($config, $section, $fallback)
     {
@@ -33,7 +33,7 @@ class Util
             if (isset($current[$key])) {
                 $current = $current[$key];
             } else {
-                if ($fallback instanceof Void) {
+                if ($fallback instanceof Invalid) {
                     throw new \DomainException;
                 }
 
@@ -65,7 +65,7 @@ class Util
      * From: http://davidhancock.co/2012/11/useful-php-functions-for-dealing-with-the-file-system/
      *
      * @param string $path The path to the file/directory to delete
-     * @return void
+     * @return Invalid
      */
     public static function delete($path)
     {
@@ -96,7 +96,7 @@ class Util
      *
      * @param string $src The path to the source file/directory
      * @param string $dst The path to the destination directory
-     * @return void
+     * @return Invalid
      */
     public static function copy($src, $dst)
     {

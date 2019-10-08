@@ -9,7 +9,7 @@ namespace Hongyukeji\PluginPackage;
  * @package Hongyukeji\PluginPackage
  * @license http://www.apache.org/licenses/LICENSE-2.0.html Apache License 2.0
  */
-class Void
+class Invalid
 {
 
     /**
