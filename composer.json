@@ -4,7 +4,7 @@
     "description": "A package system for managing things like plugins, in Composer format.",
     "keywords": ["package", "composer"],
     "homepage": "http://www.hongyuvip.com",
-    "license": "Apache-2.0",
+    "license": "MIT",
     "authors": [{"name": "hongyukeji", "email": "support@hongyuvip.com"}],
     "support": {
         "email": "support@hongyuvip.com"
