@@ -222,6 +222,27 @@ class Package
     }
 
     /**
+     * Sets the content of the config
+     *
+     * @param $array
+     * @param bool $array_merge
+     * @return array|mixed|null
+     */
+    public function setConfig($array, $array_merge = true)
+    {
+        if ($this->config === null) {
+            $this->config = json_decode(file_get_contents($this->getDir() . 'composer.json'), true);
+        }
+
+        $config = $array_merge ? array_replace_recursive($this->config, $array) : $array;
+        $json_file = $this->getDir() . 'composer.json';
+        $json_string = json_encode($config, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        file_put_contents($json_file, $json_string);
+
+        return $this->config;
+    }
+
+    /**
      * Destroys the composer.php to recreate it from the composer.json
      *
      * @return  \Hongyukeji\PluginPackage\Package
