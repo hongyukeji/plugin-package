@@ -72,7 +72,7 @@ class Package
         $dir = rtrim($dir, '/').'/';
 
         if (!file_exists($dir.'composer.json')) {
-            throw new \DomainException('Directory not found.');
+            //throw new \DomainException('Directory not found.');
         }
 
         $this->dir = $dir;
@@ -159,10 +159,10 @@ class Package
                 // @codeCoverageIgnoreEnd
             }
 
-            $this->json_config = json_decode(file_get_contents($file), true);
+            $this->json_config = json_decode(@file_get_contents($file), true);
 
             if ($this->json_config === null) {
-                throw new \DomainException;
+                //throw new \DomainException;
             }
         }
 
@@ -206,7 +206,7 @@ class Package
     {
 
         if ($this->config === null) {
-            $this->config = json_decode(file_get_contents($this->getDir().'composer.json'), true);
+            $this->config = json_decode(@file_get_contents($this->getDir().'composer.json'), true);
         }
 
         if ($section === null) {
