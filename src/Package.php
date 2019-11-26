@@ -63,15 +63,15 @@ class Package
     /**
      * Sets the directory of the package
      *
-     * @param  string  $dir The path to the package
+     * @param string $dir The path to the package
      *
      * @throws  \DomainException  When the path is not found
      */
     public function __construct($dir)
     {
-        $dir = rtrim($dir, '/').'/';
+        $dir = rtrim($dir, '/') . '/';
 
-        if (!file_exists($dir.'composer.json')) {
+        if (!file_exists($dir . 'composer.json')) {
             //throw new \DomainException('Directory not found.');
         }
 
@@ -81,7 +81,7 @@ class Package
     /**
      * Sets a loader to use the relative
      *
-     * @param   \Hongyukeji\PluginPackage\Loader  $loader
+     * @param \Hongyukeji\PluginPackage\Loader $loader
      *
      * @return $this
      */
@@ -125,12 +125,12 @@ class Package
 
             // load psr-0
             foreach ($psr0 as $namespace => $path) {
-                $loader->add($namespace, $this->getDir().$path);
+                $loader->add($namespace, $this->getDir() . $path);
             }
 
             // load psr-4
             foreach ($psr4 as $namespace => $path) {
-                $loader->addPsr4($namespace, $this->getDir().$path);
+                $loader->addPsr4($namespace, $this->getDir() . $path);
             }
 
             $loader->register();
@@ -140,8 +140,8 @@ class Package
     /**
      * Gets the content of the composer.json
      *
-     * @param   string  $section  keys of the array separated by dots
-     * @param   mixed   $fallback
+     * @param string $section keys of the array separated by dots
+     * @param mixed $fallback
      * @return  mixed
      * @throws  \DomainException  if there is no such config item and there was no fallback set
      *
@@ -150,7 +150,7 @@ class Package
     public function getJsonConfig($section = null, $fallback = null)
     {
         if ($this->json_config === null) {
-            $file = $this->getDir().'composer.json';
+            $file = $this->getDir() . 'composer.json';
 
             // should never happen as we check for composer.json on instantiation
             if (!file_exists($file)) {
@@ -189,7 +189,7 @@ class Package
     {
         $config = $this->getJsonConfig();
 
-        Util::saveArrayToFile($this->getDir().'composer.php', $config);
+        Util::saveArrayToFile($this->getDir() . 'composer.php', $config);
 
         return $this;
     }
@@ -197,8 +197,8 @@ class Package
     /**
      * Gets the content of the config
      *
-     * @param   string  $section  keys of the array separated by dots
-     * @param   mixed   $fallback
+     * @param string $section keys of the array separated by dots
+     * @param mixed $fallback
      * @return  mixed
      * @throws  \DomainException  if there is no such config item and there was no fallback set
      */
@@ -206,7 +206,7 @@ class Package
     {
 
         if ($this->config === null) {
-            $this->config = json_decode(@file_get_contents($this->getDir().'composer.json'), true);
+            $this->config = json_decode(@file_get_contents($this->getDir() . 'composer.json'), true);
         }
 
         if ($section === null) {
@@ -249,8 +249,8 @@ class Package
      */
     public function refreshConfig()
     {
-        if (file_exists($this->getDir().'composer.php')) {
-            unlink($this->getDir().'composer.php');
+        if (file_exists($this->getDir() . 'composer.php')) {
+            unlink($this->getDir() . 'composer.php');
         }
 
         $this->clearJsonConfig();
@@ -291,8 +291,12 @@ class Package
      */
     public function bootstrap()
     {
-        include $this->getDir().'bootstrap.php';
-        $this->bootstrapped = true;
+        if (file_exists($this->getDir() . 'bootstrap.php')) {
+            include $this->getDir() . 'bootstrap.php';
+            $this->bootstrapped = true;
+        } else {
+            $this->bootstrapped = false;
+        }
 
         return $this;
     }
